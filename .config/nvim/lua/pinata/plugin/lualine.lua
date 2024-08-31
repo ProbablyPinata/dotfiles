@@ -3,7 +3,7 @@ return {
     dependencies = {
         'EdenEast/nightfox.nvim'
     },
-    event = "BufReadPre",
+    event = "BufEnter",
     config = function()
         -- Based on Eviline
         -- Author: shadmansaleh

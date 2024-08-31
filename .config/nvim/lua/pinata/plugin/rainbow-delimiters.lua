@@ -1,6 +1,6 @@
 return {
     'hiphish/rainbow-delimiters.nvim',
-    event = 'BufReadPost',
+    event = 'BufEnter',
 
     config = function()
         require('rainbow-delimiters.setup').setup {

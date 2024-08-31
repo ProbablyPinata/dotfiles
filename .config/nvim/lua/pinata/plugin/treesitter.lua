@@ -2,7 +2,7 @@ return {
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
-        event = "BufReadPost",
+        event = "BufEnter",
 
         config = function ()
             local configs = require("nvim-treesitter.configs")
@@ -18,9 +18,9 @@ return {
     {
         "nvim-treesitter/nvim-treesitter-context",
         lazy = true,
-        event = "BufReadPost",
+        event = "BufEnter",
         dependencies = {
-            "nvim-telescope/telescope.nvim",
+            "nvim-treesitter/nvim-treesitter",
         },
 
         config = function()
