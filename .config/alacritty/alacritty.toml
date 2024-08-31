@@ -1,0 +1,8 @@
+import = ["~/.config/alacritty/carbonfox.toml"]
+
+[window]
+decorations = "None"
+
+[font]
+normal = { family = "CommitMonoSVB" }
+size   = 16

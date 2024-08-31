@@ -1,0 +1,62 @@
+format = """\
+$username\
+[@](fg:#161616 bg:#dfdfe0)\
+$hostname\
+$directory\
+$git_branch\
+$git_status\
+$git_metrics\
+$character
+"""
+right_format = """
+$cmd_duration\
+[ at](bg:#be95ff fg:#161616)
+$time
+"""
+
+[character]
+success_symbol = '[▊](fg:#25be6a bg:#161616)'
+error_symbol = '[▊](fg:#ee5396 bg:#161616)'
+vimcmd_symbol = '[▊](fg:#78a9ff bg:#161616)'
+
+[username]
+show_always = true
+format = '[ $user](fg:#161616 bg:#dfdfe0)'
+
+
+[hostname]
+ssh_only = false
+format = '[$hostname ](fg:#161616 bg:#dfdfe0)'
+
+[directory]
+format = "[ $path ]($style)"
+style = "fg:#08bdba bg:#282828"
+
+[git_branch]
+format = '[$branch(:$remote_branch)]($style)'
+style = "fg:#25be6a bg:#282828"
+
+[git_status]
+format = '[$all_status ]($style)'
+style = "fg:#25be6a bg:#282828"
+
+[git_metrics]
+format = "([+$added ]($added_style))[]($added_style)"
+added_style = "fg:#25be6a bg:#282828"
+deleted_style = "fg:bright-red bg:bright-red"
+disabled = false
+
+[hg_branch]
+format = "[ $symbol$branch ]($style)"
+symbol = " "
+
+[time]
+disabled = false
+time_format = "%I:%M:%S %p" # Hour:Minute Format
+format = '[ $time ](bg:#be95ff fg:#161616)'
+
+[cmd_duration]
+disabled = false
+min_time = 0
+format = '[ $duration](bg:#be95ff fg:#161616)'
+

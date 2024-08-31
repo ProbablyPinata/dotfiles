@@ -1,0 +1,7 @@
+set selection-clipboard clipboard
+
+# Invert PDF by default
+set recolor true
+
+# Keybinds
+map <C-i> recolor
