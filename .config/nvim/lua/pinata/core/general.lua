@@ -25,8 +25,7 @@ o.shiftround  = true -- >>/<< indents to nearest multiple of shiftwidth
 o.fileformat  = "unix"
 
 -- line wrap
-o.wrap = true
-o.linebreak = true -- wrap on space
+o.wrap = false
 
 -- backup files & undo
 o.swapfile = false
@@ -45,6 +44,7 @@ o.hlsearch   = true
 o.incsearch  = true
 o.ignorecase = true
 o.smartcase  = true
+o.wrapscan   = false
 
 -- colours
 o.termguicolors = true

@@ -11,7 +11,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup("pinata.plugin", {
+require("lazy").setup("pinata.plugins", {
     change_detection = {
         notify = false,
     },

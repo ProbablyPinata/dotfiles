@@ -8,7 +8,7 @@ return {
             local configs = require("nvim-treesitter.configs")
 
             configs.setup({
-                ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "html", "haskell", "bash", "kotlin" },
+                ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "html", "haskell", "bash", "kotlin", "cpp"},
                 sync_install = false,
                 highlight = { enable = true },
                 indent = { enable = true },
@@ -24,7 +24,7 @@ return {
         },
 
         config = function()
-            require'treesitter-context'.setup{
+            require('treesitter-context').setup{
                 enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
                 max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.
                 min_window_height = 0, -- Minimum editor window height to enable context. Values <= 0 mean no limit.
@@ -40,4 +40,5 @@ return {
             }
         end
     }
+    -- TODO: treesitter-textobjects
 }

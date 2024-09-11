@@ -7,6 +7,7 @@ return {
         { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
         "folke/todo-comments.nvim",
         "folke/trouble.nvim",
+        "nvim-tree/nvim-web-devicons"
     },
 
     config = function()
@@ -36,11 +37,6 @@ return {
                     },
                 },
             },
-            pickers = {
-                find_files = {
-                    disable_devicons = true
-                },
-            },
         })
 
         telescope.load_extension("fzf")
@@ -53,5 +49,7 @@ return {
         km.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
         km.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
         km.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
+        km.set("n", "<leader>/", "<cmd>Telescope current_buffer_fuzzy_find fuzzy=false case_mode=ignore_case<cr>", { desc = "Find in current file" })
+        km.set("n", "<leader>f/", "<cmd>Telescope current_buffer_fuzzy_find case_mode=ignore_case<cr>", { desc = "Fuzzy find in current file" })
     end
 }

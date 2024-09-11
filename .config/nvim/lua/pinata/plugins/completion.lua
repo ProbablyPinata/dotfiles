@@ -36,13 +36,6 @@ return {
             local ms = ls.multi_snippet
             local k = require("luasnip.nodes.key_indexer").new_key
 
-            ls.add_snippets("tex", {
-                s("ternary", {
-                    -- equivalent to "${1:cond} ? ${2:then} : ${3:else}"
-                    i(1, "cond"), t(" ? "), i(2, "then"), t(" : "), i(3, "else")
-                })
-            })
-
             vim.keymap.set({"i"}, "<C-K>", function() ls.expand() end, {silent = true})
             vim.keymap.set({"i", "s"}, "<C-L>", function() ls.jump( 1) end, {silent = true})
             vim.keymap.set({"i", "s"}, "<C-J>", function() ls.jump(-1) end, {silent = true})
@@ -75,8 +68,12 @@ return {
                     end,
                 },
                 window = {
-                    completion = cmp.config.window.bordered(),
-                    documentation = cmp.config.window.bordered(),
+                    completion = {
+                        border = "rounded"
+                    },
+                    documentation = {
+                        border = "rounded"
+                    },
                 },
                 mapping = cmp.mapping.preset.insert({
                     ['<C-b>'] = cmp.mapping.scroll_docs(-4),

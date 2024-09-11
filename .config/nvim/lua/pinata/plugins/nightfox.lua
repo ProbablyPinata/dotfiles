@@ -25,8 +25,15 @@ return {
                     variables = "NONE",
                 },
             },
-            palettes = palettes
+            palettes = palettes,
+            groups = {
+                carbonfox = {
+                    Pmenu = { bg = "#282828", fg = "#f2f4f8" },
+                    PmenuSel = { bg = "#fc5507", fg = "#f2f4f8" }
+                },
+            }
         })
+
         vim.cmd("colorscheme carbonfox")
         vim.opt.cursorline = true
         vim.opt.cursorlineopt = "screenline"

@@ -193,7 +193,7 @@ return {
 
         ins_right {
             'branch',
-            icon = 'branch: ',
+            icon = '',
             color = { fg = colors.violet, gui = 'bold' },
         }
 
