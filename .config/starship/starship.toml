@@ -17,7 +17,7 @@ $time
 [character]
 success_symbol = '[▊](fg:#25be6a bg:#161616)'
 error_symbol = '[▊](fg:#ee5396 bg:#161616)'
-vimcmd_symbol = '[▊](fg:#78a9ff bg:#161616)'
+vimcmd_symbol = '[▊](fg:#08bdba bg:#161616)'
 
 [username]
 show_always = true
