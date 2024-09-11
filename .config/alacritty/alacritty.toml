@@ -4,5 +4,5 @@ import = ["~/.config/alacritty/carbonfox.toml"]
 decorations = "None"
 
 [font]
-normal = { family = "CommitMonoSVB" }
+normal = { family = "CommitMonoSVB Nerd Font" }
 size   = 16
