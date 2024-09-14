@@ -1,10 +1,7 @@
 return {
     'norcalli/nvim-colorizer.lua',
     keys = {
-        { "<leader>w", "<cmd>ColorizerToggle<cr>"}
+        { "<leader><leader>c", "<cmd>ColorizerToggle<cr>"}
     },
-
-    config = function()
-        require 'colorizer'.setup()
-    end
+    config = true
 }
