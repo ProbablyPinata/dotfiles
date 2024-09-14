@@ -3,5 +3,14 @@ return {
     dependencies = {
         "nvim-tree/nvim-web-devicons",
     },
-    opts = {},
+    event = "VimEnter",
+    config = true,
+    keys = {
+        { "<leader>e", "<cmd>Oil<cr>", mode = { "n", "v"} }
+    },
+    opts = {
+        view_options = {
+            show_hidden = true
+        }
+    }
 }
