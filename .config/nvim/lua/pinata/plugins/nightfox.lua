@@ -14,8 +14,8 @@ return {
             options = {
                 styles = {               -- Style to be applied to different syntax groups
                     comments = "italic",     -- Value is any valid attr-list value `:help attr-list`
-                    conditionals = "NONE",
-                    constants = "underdouble",
+                    conditionals = "bold",
+                    constants = "underline",
                     functions = "bold",
                     keywords = "bold",
                     numbers = "NONE",
@@ -28,8 +28,9 @@ return {
             palettes = palettes,
             groups = {
                 carbonfox = {
-                    Pmenu = { bg = "#282828", fg = "#f2f4f8" },
-                    PmenuSel = { bg = "#fc5507", fg = "#f2f4f8" }
+                    Pmenu = { bg = "#161616", fg = "#f2f4f8" },
+                    PmenuSel = { bg = "#fc5507", fg = "#f2f4f8" },
+                    Conceal = { fg = "#78a9ff" } -- TODO: figure out how to link this to blue
                 },
             }
         })
