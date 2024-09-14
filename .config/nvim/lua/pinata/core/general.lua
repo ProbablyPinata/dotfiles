@@ -63,4 +63,4 @@ o.lazyredraw = true
 
 -- hide links with vim conceal
 o.conceallevel = 2
-o.concealcursor = 'nc'
+o.concealcursor = '' -- do not conceal cursorline
