@@ -1,5 +1,8 @@
 return {
     'hiphish/rainbow-delimiters.nvim',
+    dependencies = {
+        "nvim-treesitter/nvim-treesitter",
+    },
     event = 'BufEnter',
 
     config = function()
@@ -11,12 +14,11 @@ return {
                 -- ...
             },
             highlight = {
-                'RainbowDelimiterYellow',
-                'RainbowDelimiterBlue',
-                'RainbowDelimiterOrange',
-                'RainbowDelimiterViolet',
-                'RainbowDelimiterGreen',
-                'RainbowDelimiterCyan',
+                "TSRainbowYellow",
+                "TSRainbowViolet",
+                "TSRainbowRed",
+                "TSRainbowOrange",
+                "TSRainbowBlue",
             },
         }
     end
