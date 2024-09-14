@@ -5,5 +5,8 @@ return {
         "sindrets/diffview.nvim",        -- optional - Diff integration
         "nvim-telescope/telescope.nvim", -- optional
     },
-    config = true
+    config = true,
+    keys = {
+        { "<leader>gs", "<cmd>Neogit<cr>", mode = { "n" }}
+    }
 }
