@@ -1,5 +1,6 @@
 return {
     "tpope/vim-fugitive",
-    lazy = true,
-    event = "BufEnter"
+    keys = {
+        { "<leader>gb", "<cmd>Git blame<cr>", mode = { "n" }}
+    }
 }
