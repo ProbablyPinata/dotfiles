@@ -2,6 +2,7 @@ return {
     {
         "L3MON4D3/LuaSnip",
         event = "InsertEnter",
+        version = "v2.*", -- follow latest release
         dependencies = {
             "saadparwaiz1/cmp_luasnip",
             "rafamadriz/friendly-snippets"
