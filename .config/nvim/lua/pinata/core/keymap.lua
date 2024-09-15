@@ -50,7 +50,7 @@ km.set("v", "<leader>v", '"+p')
 -- f telescope (find ...)
 -- g git (fugitive/neogit), lsp goto (definition, references)
 -- h harpoon
--- i
+-- i img-clip
 -- j
 -- k
 -- l
