@@ -9,9 +9,12 @@ return {
 
             configs.setup({
                 ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "html", "haskell", "bash", "kotlin", "cpp", "toml", "markdown", "markdown_inline" },
+                ignore_install= { },
+                auto_install = true,
                 sync_install = false,
                 highlight = { enable = true },
                 indent = { enable = false }, -- buggy, and seems to conflic with nvim-autopairs
+                additional_vim_regex_highlighting = false,
             })
         end
     },
