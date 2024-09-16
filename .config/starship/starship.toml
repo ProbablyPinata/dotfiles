@@ -5,7 +5,6 @@ $hostname\
 $directory\
 $git_branch\
 $git_status\
-$git_metrics\
 $character
 """
 right_format = """
@@ -33,22 +32,31 @@ format = "[ $path ]($style)"
 style = "fg:#08bdba bg:#282828"
 
 [git_branch]
-format = '[$branch(:$remote_branch)]($style)'
+format = '[$branch (:$remote_branch )]($style)'
 style = "fg:#25be6a bg:#282828"
 
 [git_status]
-format = '[$all_status ]($style)'
-style = "fg:#25be6a bg:#282828"
+format = '[$stashed]($style)[$deleted](fg:#ee5396 bg:#282828)[$renamed](fg:#be95ff bg:#282828)[$modified](fg:#FFF050 bg:#282828)[$typechanged](fg:#be95ff bg:#282828)[$staged](fg:#25be6a bg:#282828)[$untracked](fg:#525252 bg:#282828)[$ahead_behind ]($style)'
+style = "fg:#dfdfe0 bg:#282828"
+conflicted = "conflicting"
+ahead = ", ahead by ${count}"
+behind = ", behind by ${count}"
+diverged = ", diverged (${ahead_count} ahead, ${behind_count} behind)"
+up_to_date = ""
+untracked = "?${count} "
+stashed = "$${count}"
+modified = "!${count} "
+staged = "+${count} "
+renamed = ">${count} "
+deleted = "x${count} "
+typechanged = "@${count}"
+ignore_submodules = true
 
 [git_metrics]
-format = "([+$added ]($added_style))[]($added_style)"
+format = '([+$added ]($added_style))([-$deleted ]($deleted_style))'
 added_style = "fg:#25be6a bg:#282828"
-deleted_style = "fg:bright-red bg:bright-red"
-disabled = false
-
-[hg_branch]
-format = "[ $symbol$branch ]($style)"
-symbol = " "
+deleted_style = "fg:#ee5396 bg:#282828"
+disabled = true
 
 [time]
 disabled = false
