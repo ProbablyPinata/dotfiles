@@ -1,8 +1,11 @@
 return {
     'Wansmer/treesj',
-    -- keys = { '<space>m', '<space>j', '<space>s' },
-    dependencies = { 'nvim-treesitter/nvim-treesitter' }, -- if you install parsers with `nvim-treesitter`
-    lazy = false,
+    keys = {
+        { "<leader>jt", "<cmd>TSJToggle<cr>", mode = { "n" } },
+        { "<leader>jj", "<cmd>TSJJoin<cr>", mode = { "n" }},
+        { "<leader>js", "<cmd>TSJSplit<cr>", mode = { "n" }}
+    },
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
     config = function()
         local tsj = require('treesj')
 

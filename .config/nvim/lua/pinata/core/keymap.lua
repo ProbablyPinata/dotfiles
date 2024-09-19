@@ -51,7 +51,7 @@ km.set("v", "<leader>v", '"+p')
 -- g git (fugitive/neogit), lsp goto (definition, references)
 -- h harpoon
 -- i img-clip
--- j
+-- j treesj
 -- k
 -- l
 -- m
