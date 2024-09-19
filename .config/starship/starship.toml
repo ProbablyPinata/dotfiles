@@ -4,6 +4,7 @@ $username\
 $hostname\
 $directory\
 $git_branch\
+$git_metrics\
 $git_status\
 $character
 """
@@ -22,7 +23,6 @@ vimcmd_symbol = '[▊](fg:#08bdba bg:#161616)'
 show_always = true
 format = '[ $user](fg:#161616 bg:#dfdfe0)'
 
-
 [hostname]
 ssh_only = false
 format = '[$hostname ](fg:#161616 bg:#dfdfe0)'
@@ -36,7 +36,7 @@ format = '[$branch (:$remote_branch )]($style)'
 style = "fg:#25be6a bg:#282828"
 
 [git_status]
-format = '[$stashed]($style)[$deleted](fg:#ee5396 bg:#282828)[$renamed](fg:#be95ff bg:#282828)[$modified](fg:#FFF050 bg:#282828)[$typechanged](fg:#be95ff bg:#282828)[$staged](fg:#25be6a bg:#282828)[$untracked](fg:#525252 bg:#282828)[$ahead_behind ]($style)'
+format = '[$stashed]($style)[$deleted](fg:#ee5396 bg:#282828)[$renamed](fg:#be95ff bg:#282828)[$modified](fg:#FFF050 bg:#282828)[$typechanged](fg:#be95ff bg:#282828)[$staged](fg:#25be6a bg:#282828)[$untracked](fg:#7B7C7E bg:#282828)[$ahead_behind ]($style)'
 style = "fg:#dfdfe0 bg:#282828"
 conflicted = "conflicting"
 ahead = ", ahead by ${count}"
@@ -56,7 +56,7 @@ ignore_submodules = true
 format = '([+$added ]($added_style))([-$deleted ]($deleted_style))'
 added_style = "fg:#25be6a bg:#282828"
 deleted_style = "fg:#ee5396 bg:#282828"
-disabled = true
+disabled = false
 
 [time]
 disabled = false
