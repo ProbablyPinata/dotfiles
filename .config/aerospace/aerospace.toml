@@ -33,6 +33,8 @@ default-root-container-orientation = 'auto'
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
 key-mapping.preset = 'qwerty'
 
+
+
 # Mouse follows focus when focused monitor changes
 # Drop it from your config, if you don't like this behavior
 # See https://nikitabobko.github.io/AeroSpace/guide#on-focus-changed-callbacks
@@ -47,12 +49,12 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 #                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
-inner.horizontal = 0
-inner.vertical   = 0
-outer.left       = 0
-outer.bottom     = -5
-outer.top        = -5
-outer.right      = 0
+inner.horizontal = 10
+inner.vertical   = 10
+outer.left       = 10
+outer.bottom     = 10
+outer.top        = 10
+outer.right      = 10
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -133,3 +135,40 @@ ctrl-cmd-alt-tab = 'move-workspace-to-monitor --wrap-around next'
 if.app-id = 'org.mozilla.firefox'
 if.window-title-regex-substring = 'Picture-in-Picture'
 run = 'layout floating'
+
+# [key-mapping.key-notation-to-key-code]
+# q = 'q'
+# w = 'w'
+# f = 'e'
+# p = 'r'
+# g = 't'
+# j = 'y'
+# l = 'u'
+# u = 'i'
+# y = 'o'
+# semicolon = 'p'
+# leftSquareBracket = 'leftSquareBracket'
+# rightSquareBracket = 'rightSquareBracket'
+# backslash = 'backslash'
+# a = 'a'
+# r = 's'
+# s = 'd'
+# t = 'f'
+# d = 'g'
+# h = 'h'
+# n = 'j'
+# e = 'k'
+# i = 'l'
+# o = 'semicolon'
+# quote = 'quote'
+# z = 'z'
+# x = 'x'
+# c = 'c'
+# v = 'v'
+# b = 'b'
+# k = 'n'
+# m = 'm'
+# comma = 'comma'
+# period = 'period'
+# slash = 'slash'
+#
