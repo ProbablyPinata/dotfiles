@@ -1,11 +1,11 @@
 format = """\
 $username\
-[@](fg:#161616 bg:#dfdfe0)\
+[@](fg:#dfdfe0 bg:#282828)\
 $hostname\
 $directory\
 $git_branch\
-$git_metrics\
 $git_status\
+$git_metrics\
 $character
 """
 right_format = """
@@ -21,30 +21,30 @@ vimcmd_symbol = '[▊](fg:#08bdba bg:#161616)'
 
 [username]
 show_always = true
-format = '[ $user](fg:#161616 bg:#dfdfe0)'
+format = '[ $user](fg:#dfdfe0 bg:#282828)'
 
 [hostname]
 ssh_only = false
-format = '[$hostname ](fg:#161616 bg:#dfdfe0)'
+format = '[$hostname ](fg:#dfdfe0 bg:#282828)'
 
 [directory]
 format = "[ $path ]($style)"
-style = "fg:#08bdba bg:#282828"
+style = "fg:#161616 bg:#dfdfe0 bold"
 
 [git_branch]
-format = '[$branch (:$remote_branch )]($style)'
-style = "fg:#25be6a bg:#282828"
+format = '[ $branch(:$remote_branch)]($style)'
+style = "fg:#08bdba bg:#282828"
 
 [git_status]
-format = '[$stashed]($style)[$deleted](fg:#ee5396 bg:#282828)[$renamed](fg:#be95ff bg:#282828)[$modified](fg:#FFF050 bg:#282828)[$typechanged](fg:#be95ff bg:#282828)[$staged](fg:#25be6a bg:#282828)[$untracked](fg:#7B7C7E bg:#282828)[$ahead_behind ]($style)'
+format = '$ahead_behind[$stashed]($style)[$deleted](fg:#ee5396 bg:#282828)[$renamed](fg:#be95ff bg:#282828)[$modified](fg:#FFF050 bg:#282828)[$typechanged](fg:#be95ff bg:#282828)[$staged](fg:#25be6a bg:#282828)[$untracked](fg:#7B7C7E bg:#282828)'
 style = "fg:#dfdfe0 bg:#282828"
-conflicted = "conflicting"
-ahead = ", ahead by ${count}"
-behind = ", behind by ${count}"
-diverged = ", diverged (${ahead_count} ahead, ${behind_count} behind)"
-up_to_date = ""
+conflicted = "conflicted"
+ahead = "[, ahead by ${count} ](fg:#08bdba bg:#282828)"
+behind = "[, behind by ${count} ](fg:#08bdba bg:#282828)"
+diverged = "[ ${ahead_count} ahead, ${behind_count} behind ]"
+up_to_date = "[ ](bg:#282828)"
 untracked = "?${count} "
-stashed = "$${count}"
+stashed = "stashed ${count} "
 modified = "!${count} "
 staged = "+${count} "
 renamed = ">${count} "
