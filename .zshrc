@@ -23,7 +23,6 @@ function clean_pdf() {
 
 function view() { nohup zathura $1 & }
 
-[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
 
 autoload -Uz vcs_info # enable version control info, in variable vcs_info_msg_0 to be used in prompt
 
@@ -56,6 +55,13 @@ export DBUS_SESSION_BUS_ADDRESS="unix:path=$DBUS_LAUNCHD_SESSION_BUS_SOCKET"
 
 eval "$(starship init zsh)"
 
+PATH=$PATH:/Users/stefan/comp50007/pintos_task0_sv823/src/utils
+PATH=$PATH:/Users/stefan/mac-i686-elf-gcc-binaries/bin
+
+fastfetch
+
 # LAST THING IN THE ZSHRC:
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+
+[ -f "/Users/stefan/.ghcup/env" ] && . "/Users/stefan/.ghcup/env" # ghcup-env
