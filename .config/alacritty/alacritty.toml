@@ -1,8 +1,24 @@
-import = ["~/.config/alacritty/carbonfox.toml"]
-
 [window]
 decorations = "None"
 
 [font]
-normal = { family = "CommitMonoSVB Nerd Font" }
-size   = 16
+size = 14.0
+
+[font.normal]
+family = "CommitMono Nerd Font"
+style = "Regular"
+
+[font.bold]
+family = "CommitMono Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "CommitMono Nerd Font"
+style = "Italic"
+
+[font.bold_italic]
+family = "CommitMono Nerd Font"
+style = "Bold Italic"
+
+[general]
+import = ["~/.config/alacritty/carbonfox.toml"]
