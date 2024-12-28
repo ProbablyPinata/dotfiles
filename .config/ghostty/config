@@ -1,0 +1,17 @@
+auto-update = check
+auto-update-channel = stable
+
+font-family = "CommitMono Nerd Font"
+font-size = 15
+adjust-font-baseline = 1
+adjust-cursor-thickness = 2
+
+# Theme
+config-file = ?carbonfox.ghostty
+
+# Overwrite some colors.
+# Make sure to delete these assignments from the theme file, 
+# as they are not overwritten.
+cursor-color = #FC5507
+cursor-text = #F2F4F8
+
