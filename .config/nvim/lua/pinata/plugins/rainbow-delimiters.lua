@@ -3,8 +3,7 @@ return {
     dependencies = {
         "nvim-treesitter/nvim-treesitter",
     },
-    event = 'BufEnter',
-
+    event = { 'BufReadPre', 'BufNewFile' }, -- TODO: why does this work but BufEnter does not work if you open a single file?
     config = function()
         require('rainbow-delimiters.setup').setup {
             strategy = {

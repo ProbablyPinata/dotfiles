@@ -4,9 +4,10 @@ return {
     lazy = false,
     dependencies = {
         "nvim-lua/plenary.nvim",
+        "BurntSushi/ripgrep",
         { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-        "folke/todo-comments.nvim",
-        "folke/trouble.nvim",
+        "sharkdp/fd",
+        "nvim-treesitter/nvim-treesitter",
         "nvim-tree/nvim-web-devicons"
     },
 
@@ -26,16 +27,9 @@ return {
         })
 
         telescope.setup({
-            defaults = {
-                path_display = { "smart" }, -- for long filenames
-                mappings = {
-                    i = {
-                        ["<C-k>"] = actions.move_selection_previous, -- move to prev result
-                        ["<C-j>"] = actions.move_selection_next, -- move to next result
-                        ["<C-q>"] = actions.send_selected_to_qflist + custom_actions.open_trouble_qflist,
-                        ["<C-t>"] = trouble_telescope.open,
-                    },
-                },
+            defaults = require('telescope.themes').get_ivy {},
+            extensions = {
+                fzf = {}
             },
         })
 
@@ -43,13 +37,24 @@ return {
 
         -- set keymaps
         local km = vim.keymap -- for conciseness
+        local builtin = require('telescope.builtin')
 
-        km.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
-        km.set("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
-        km.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
-        km.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
-        km.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
-        km.set("n", "<leader>/", "<cmd>Telescope current_buffer_fuzzy_find fuzzy=false case_mode=ignore_case<cr>", { desc = "Find in current file" })
-        km.set("n", "<leader>f/", "<cmd>Telescope current_buffer_fuzzy_find case_mode=ignore_case<cr>", { desc = "Fuzzy find in current file" })
+        -- Find
+        km.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
+        km.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
+        km.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
+        km.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
+
+        km.set('n', '<leader>ft', "<cmd>TodoTelescope<cr>", { desc = 'Telescope find TODOs' })
+        km.set('n', '<leader>fs', builtin.grep_string, { desc = 'Telescope grep string' })
+
+        km.set("n", "<leader>/", "<cmd>Telescope current_buffer_fuzzy_find case_mode=ignore_case<cr>", { desc = "Fuzzy find in current file" })
+        km.set("n", "<leader>f/", "<cmd>Telescope current_buffer_fuzzy_find fuzzy=false case_mode=ignore_case<cr>", { desc = "Telescope current buffer find" })
+
+
+        -- Git
+        km.set('n', '<leader>gs', builtin.git_status, { desc = 'Telescope git status' })
+        km.set('n', '<leader>gr', builtin.git_branches, { desc = 'Telescope git branches' })
+        km.set('n', '<leader>fe', builtin.treesitter, { desc = 'Telescope treesitter' })
     end
 }

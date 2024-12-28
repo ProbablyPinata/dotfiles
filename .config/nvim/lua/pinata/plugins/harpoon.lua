@@ -1,6 +1,9 @@
 return {
     "ThePrimeagen/harpoon",
     branch = "harpoon2",
+    dependencies = {
+      "tpope/vim-fugitive", -- Toggle git blame when switching buffers with harpoon
+    },
     opts = {
         settings = {
             save_on_toggle = true,
@@ -31,7 +34,7 @@ return {
                     require("harpoon"):list():select(1)
                 end,
                 desc = "Harpoon Jump To 1",
-                mode = "n",
+                mode = { "n", "i", "v"},
             },
             {
                 "<C-k>",
@@ -39,7 +42,7 @@ return {
                     require("harpoon"):list():select(2)
                 end,
                 desc = "Harpoon Jump To 2",
-                mode = "n",
+                mode = { "n", "i", "v"},
             },
             {
                 "<C-l>",
@@ -47,7 +50,7 @@ return {
                     require("harpoon"):list():select(3)
                 end,
                 desc = "Harpoon Jump To 3",
-                mode = "n",
+                mode = { "n", "i", "v"},
             },
             {
                 "<C-h>",
@@ -55,7 +58,7 @@ return {
                     require("harpoon"):list():select(4)
                 end,
                 desc = "Harpoon Jump To 4",
-                mode = "n",
+                mode = { "n", "i", "v"},
             },
         }
     end,

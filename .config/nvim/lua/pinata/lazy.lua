@@ -30,6 +30,7 @@ require("lazy").setup("pinata.plugins", {
             start = 'start:',
             task = 'task:',
             lazy = 'lazy:',
+
         },
     }
 })

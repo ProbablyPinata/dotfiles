@@ -1,4 +1,5 @@
 return {
+    -- install emacs for exporting
     'nvim-orgmode/orgmode',
     lazy = true,
     ft = { 'org' },

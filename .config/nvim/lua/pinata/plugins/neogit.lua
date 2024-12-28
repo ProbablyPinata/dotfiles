@@ -7,6 +7,6 @@ return {
     },
     config = true,
     keys = {
-        { "<leader>gs", "<cmd>Neogit<cr>", mode = { "n" }}
+        { "<leader>gg", "<cmd>Neogit<cr>", mode = { "n" }}
     }
 }
