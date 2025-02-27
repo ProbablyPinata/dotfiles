@@ -4,10 +4,17 @@ export HOMEBREW_NO_EMOJI=1
 export BAT_THEME="ansi"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
+# workaround for "unknown" ghostty terminal
+if [[ "$TERM_PROGRAM" == "ghostty" ]]; then
+    export TERM=xterm-256color
+fi
 
 alias icloud="cd '/Users/stefan/Library/Mobile Documents/com~apple~CloudDocs'"
 alias ls="eza"
 alias config='$(which git) --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
+alias wacc-reference-compiler="java -jar /Users/stefan/comp50007/wacc-examples/wacc-reference-cli.jar"
+alias vm="ssh sv823@cloud-vm-45-94.doc.ic.ac.uk"
 
 # takes the filename of a pdf and outputs the optimized (compressed and stripped of metadata) filename.cleaned.pdf
 function clean_pdf() {
@@ -57,6 +64,7 @@ eval "$(starship init zsh)"
 
 PATH=$PATH:/Users/stefan/comp50007/pintos_task0_sv823/src/utils
 PATH=$PATH:/Users/stefan/mac-i686-elf-gcc-binaries/bin
+
 
 fastfetch
 
