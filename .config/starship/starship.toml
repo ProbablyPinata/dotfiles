@@ -4,13 +4,14 @@ $username\
 $hostname\
 $directory\
 $git_branch\
+$git_commit\
 $git_status\
 $git_metrics\
+$sudo\
 $character
 """
 right_format = """
 $cmd_duration\
-[ at](bg:#be95ff fg:#161616)
 $time
 """
 
@@ -32,24 +33,28 @@ format = "[ $path ]($style)"
 style = "fg:#161616 bg:#dfdfe0 bold"
 
 [git_branch]
-format = '[ $branch(:$remote_branch)]($style)'
+format = '[ $branch(:$remote_branch )]($style)'
+style = "fg:#08bdba bg:#282828"
+
+[git_commit]
+commit_hash_length = 7
+format = '[\($hash$tag\) ]($style)'
 style = "fg:#08bdba bg:#282828"
 
 [git_status]
-format = '$ahead_behind[$stashed]($style)[$deleted](fg:#ee5396 bg:#282828)[$renamed](fg:#be95ff bg:#282828)[$modified](fg:#FFF050 bg:#282828)[$typechanged](fg:#be95ff bg:#282828)[$staged](fg:#25be6a bg:#282828)[$untracked](fg:#7B7C7E bg:#282828)'
-style = "fg:#dfdfe0 bg:#282828"
-conflicted = "conflicted"
+format = "$ahead_behind[$stashed](fg:#dfdfe0 bg:#282828)[$deleted](fg:#ee5396 bg:#282828)[$renamed](fg:#be95ff bg:#282828)[$modified](fg:#FFF050 bg:#282828)[$typechanged](fg:#be95ff bg:#282828)[$staged](fg:#25be6a bg:#282828)[$untracked](fg:#7B7C7E bg:#282828)"
+conflicted = "conflicted" 
 ahead = "[, ahead by ${count} ](fg:#08bdba bg:#282828)"
 behind = "[, behind by ${count} ](fg:#08bdba bg:#282828)"
-diverged = "[ ${ahead_count} ahead, ${behind_count} behind ]"
+diverged = "[${ahead_count} ahead, ${behind_count} behind ]"
 up_to_date = "[ ](bg:#282828)"
 untracked = "?${count} "
 stashed = "stashed ${count} "
 modified = "!${count} "
-staged = "+${count} "
-renamed = ">${count} "
-deleted = "x${count} "
-typechanged = "@${count}"
+staged = "s${count} "
+renamed = "r${count}, "
+deleted = "d${count}, "
+typechanged = ".${count}"
 ignore_submodules = true
 
 [git_metrics]
@@ -66,5 +71,6 @@ format = '[ $time ](bg:#be95ff fg:#161616)'
 [cmd_duration]
 disabled = false
 min_time = 0
+show_milliseconds = true
 format = '[ $duration](bg:#be95ff fg:#161616)'
 
