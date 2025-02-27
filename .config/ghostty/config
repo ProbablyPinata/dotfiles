@@ -2,12 +2,26 @@ auto-update = check
 auto-update-channel = stable
 
 font-family = "CommitMono Nerd Font"
-font-size = 15
-adjust-font-baseline = 1
-adjust-cursor-thickness = 2
+# font-family = "FiraMono Nerd Font"
+# font-family = "FiraCode Nerd Font"
+# font-family = "BitstromWera Nerd Font Mono"
+# font-family = "GeistMono NFM"
 
-# Theme
-config-file = ?carbonfox.ghostty
+
+font-size = 14
+# adjust-font-baseline = 1
+
+# adjust-cell-height = 15%
+# adjust-cursor-height = 15%
+# adjust-cursor-thickness = 2
+
+# Theme and decorations
+window-decoration = false
+window-padding-x = 0
+window-padding-y = 0
+
+theme = carbonfox
+# deprecated: config-file = ?carbonfox.ghostty
 
 # Overwrite some colors.
 # Make sure to delete these assignments from the theme file, 
