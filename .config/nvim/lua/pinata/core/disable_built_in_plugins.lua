@@ -1,10 +1,3 @@
--- Missing: 
---[[
-    "netrw",
-    "netrwPlugin",
-    "netrwSettings",
-    "netrwFileHandlers",
---]]
 local disabled_built_ins = {
     "gzip",
     "zip",
@@ -19,7 +12,11 @@ local disabled_built_ins = {
     "logipat",
     "rrhelper",
     "spellfile_plugin",
-    "matchit"
+    "matchit",
+    "netrw",
+    "netrwPlugin",
+    "netrwSettings",
+    "netrwFileHandlers"
 }
 
 for _, plugin in pairs(disabled_built_ins) do

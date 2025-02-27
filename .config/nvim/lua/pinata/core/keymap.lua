@@ -1,13 +1,11 @@
 local km = vim.keymap
 local g = vim.g
-local cmd = vim.cmd
+-- local cmd = vim.cmd
 
 g.mapleader = ' '
-g.maplocalleader = '`'
+g.maplocalleader = '\\'
 
 -- NORMAL/VISUAL
-km.set("n", "<leader>pv", cmd.Ex)
-
 -- centre when cycling
 -- zz centres the cursor
 -- zv opens folds
@@ -17,8 +15,8 @@ km.set("n", "<C-o>", "<C-o>zvzz")
 km.set("n", "<C-i>", "<C-i>zvzz")
 
 -- Move visual region up/down
-km.set("v", "<C-J>", ":move '>+1<CR>gv=gv")
-km.set("v", "<C-K>", ":move '<-2<CR>gv=gv")
+-- km.set("v", "<C-J>", ":move '>+1<CR>gv=gv")
+-- km.set("v", "<C-K>", ":move '<-2<CR>gv=gv")
 
 -- centre when scrolling
 km.set("n", "<C-d>", "<C-d>zz")

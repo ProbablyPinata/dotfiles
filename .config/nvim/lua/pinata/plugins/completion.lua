@@ -88,9 +88,8 @@ return {
                     { name = 'nvim_lsp' },
                     { name = 'luasnip' },
                     { name = 'orgmode' },
-                }, {
-                        { name = 'buffer' },
-                    })
+                    { name = 'buffer' },
+                })
             })
             -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
             cmp.setup.cmdline({ '/', '?' }, {

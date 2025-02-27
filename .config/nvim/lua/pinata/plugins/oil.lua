@@ -9,6 +9,7 @@ return {
         { "<leader>e", "<cmd>Oil<cr>", mode = { "n", "v"} }
     },
     opts = {
+        watch_for_changes = true,
         view_options = {
             show_hidden = true
         }
