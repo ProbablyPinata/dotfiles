@@ -1,7 +1,7 @@
 format = """\
 $username\
-[@](fg:#dfdfe0 bg:#282828)\
 $hostname\
+$python\
 $directory\
 $git_branch\
 $git_commit\
@@ -16,24 +16,24 @@ $time
 """
 
 [character]
-success_symbol = '[▊](fg:#25be6a bg:#161616)'
-error_symbol = '[▊](fg:#ee5396 bg:#161616)'
-vimcmd_symbol = '[▊](fg:#08bdba bg:#161616)'
+success_symbol = '[█](fg:#25be6a)'
+error_symbol = '[█](fg:#ee5396)'
+vimcmd_symbol = '[█](fg:#08bdba)'
 
 [username]
-show_always = true
-format = '[ $user](fg:#dfdfe0 bg:#282828)'
+show_always = false
+format = '[ $user](bg:#282828 fg:#dfdfe0)'
 
 [hostname]
-ssh_only = false
-format = '[$hostname ](fg:#dfdfe0 bg:#282828)'
+ssh_only = true
+format = '[@$hostname ](bg:#282828 fg:#dfdfe0)'
 
 [directory]
 format = "[ $path ]($style)"
-style = "fg:#161616 bg:#dfdfe0 bold"
+style = "fg:#dfdfe0 bg:#282828 bold"
 
 [git_branch]
-format = '[ $branch(:$remote_branch )]($style)'
+format = '[→ $branch(:$remote_branch )]($style)'
 style = "fg:#08bdba bg:#282828"
 
 [git_commit]
@@ -42,7 +42,7 @@ format = '[\($hash$tag\) ]($style)'
 style = "fg:#08bdba bg:#282828"
 
 [git_status]
-format = "$ahead_behind[$stashed](fg:#dfdfe0 bg:#282828)[$deleted](fg:#ee5396 bg:#282828)[$renamed](fg:#be95ff bg:#282828)[$modified](fg:#FFF050 bg:#282828)[$typechanged](fg:#be95ff bg:#282828)[$staged](fg:#25be6a bg:#282828)[$untracked](fg:#7B7C7E bg:#282828)"
+format = "$ahead_behind[$stashed](fg:#dfdfe0 bg:#282828)[$deleted](fg:#ee5396 bg:#282828)[$renamed](fg:#be95ff bg:#282828)[$modified](fg:#FFF050 bg:#282828)[$typechanged](fg:#be95ff bg:#282828)[$staged](fg:#25be6a bg:#282828)[$untracked](fg:#b6b8bb bg:#282828)"
 conflicted = "conflicted" 
 ahead = "[, ahead by ${count} ](fg:#08bdba bg:#282828)"
 behind = "[, behind by ${count} ](fg:#08bdba bg:#282828)"
@@ -66,11 +66,14 @@ disabled = false
 [time]
 disabled = false
 time_format = "%I:%M:%S %p" # Hour:Minute Format
-format = '[ $time ](bg:#be95ff fg:#161616)'
+format = '[ $time ](fg:#dfdfe0 bg:#282828)'
 
 [cmd_duration]
 disabled = false
 min_time = 0
 show_milliseconds = true
-format = '[ $duration](bg:#be95ff fg:#161616)'
+format = '[ $duration |](fg:#dfdfe0 bg:#282828)'
 
+
+[python]
+format = '[(\($virtualenv\))](bg:#282828 fg:#dfdfe0 italic)'
