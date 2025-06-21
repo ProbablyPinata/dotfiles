@@ -1,6 +1,7 @@
 auto-update = check
 auto-update-channel = stable
 
+
 font-family = "CommitMono Nerd Font"
 # font-family = "FiraMono Nerd Font"
 # font-family = "FiraCode Nerd Font"
@@ -10,18 +11,21 @@ font-family = "CommitMono Nerd Font"
 
 font-size = 14
 # adjust-font-baseline = 1
+adjust-underline-position = 20%
 
 # adjust-cell-height = 15%
 # adjust-cursor-height = 15%
-# adjust-cursor-thickness = 2
+cursor-style = block
+cursor-style-blink = false
+shell-integration-features = no-cursor
+adjust-cursor-thickness = 2
 
 # Theme and decorations
 window-decoration = false
 window-padding-x = 0
 window-padding-y = 0
 
-theme = carbonfox
-# deprecated: config-file = ?carbonfox.ghostty
+theme = dark:carbonfox_custom.ghostty,light:dayfox
 
 # Overwrite some colors.
 # Make sure to delete these assignments from the theme file, 
@@ -29,3 +33,11 @@ theme = carbonfox
 cursor-color = #FC5507
 cursor-text = #F2F4F8
 
+
+# ---------------------------------------------------------------------------- #
+# Keyboard
+#
+# keybind = trigger=action
+# keybind = option
+
+macos-option-as-alt = true

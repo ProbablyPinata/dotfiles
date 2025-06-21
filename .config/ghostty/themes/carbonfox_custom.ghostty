@@ -2,7 +2,7 @@
 ## name: carbonfox
 ## upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/carbonfox/carbonfox.ghostty
 
-background = #161616
+background = #000000
 foreground = #f2f4f8
 selection-background = #2a2a2a
 selection-foreground = #f2f4f8
