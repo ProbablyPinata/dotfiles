@@ -2,7 +2,7 @@ return {
     {
         "folke/lazydev.nvim",
         dependencies = {
-            "hrsh7th/nvim-cmp",
+            "saghen/blink.cmp",
         },
         ft = "lua", -- only load on lua files
         opts = {
@@ -13,5 +13,4 @@ return {
             },
         },
     },
-    { "Bilal2453/luvit-meta", lazy = true }, -- optional `vim.uv` typings
 }

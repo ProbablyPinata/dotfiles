@@ -14,6 +14,10 @@ km.set("n", "N", "Nzvzz")
 km.set("n", "<C-o>", "<C-o>zvzz")
 km.set("n", "<C-i>", "<C-i>zvzz")
 
+
+km.set("n", "<C-j>", "<cmd>cnext<cr>")
+km.set("n", "<C-k>", "<cmd>cprev<cr>")
+
 -- Move visual region up/down
 -- km.set("v", "<C-J>", ":move '>+1<CR>gv=gv")
 -- km.set("v", "<C-K>", ":move '<-2<CR>gv=gv")
@@ -45,7 +49,7 @@ km.set("v", "<leader>v", '"+p')
 -- c OS copy
 -- d Obsi[D]ian
 -- e oil (explore)
--- f telescope (find ...)
+-- f snacks.picker (find...)
 -- g git (fugitive/neogit), lsp goto (definition, references)
 -- h harpoon
 -- i img-clip

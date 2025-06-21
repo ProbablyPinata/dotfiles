@@ -8,7 +8,7 @@ return {
             local configs = require("nvim-treesitter.configs")
 
             configs.setup({
-                ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "html", "haskell", "bash", "kotlin", "cpp", "toml", "markdown", "markdown_inline", "scala", "java"},
+                ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "html", "haskell", "bash", "kotlin", "cpp", "toml", "markdown", "markdown_inline", "scala", "java", "python"},
                 ignore_install= { },
                 auto_install = false,
                 sync_install = false,

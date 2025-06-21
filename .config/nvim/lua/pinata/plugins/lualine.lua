@@ -88,11 +88,11 @@ return {
         local current_bar_color = function()
             -- auto change color according to neovims mode
             local mode_color = {
-                n = colors.red,
+                n = colors.blue,
                 i = colors.green,
-                v = colors.blue,
-                [''] = colors.blue,
-                V = colors.blue,
+                v = colors.red,
+                [''] = colors.red,
+                V = colors.red,
                 c = colors.magenta,
                 no = colors.red,
                 s = colors.orange,
@@ -114,7 +114,7 @@ return {
 
         ins_left {
             function()
-                return '▊'
+                return '█'
             end,
             color = current_bar_color,
             padding = { left = 0, right = 1 }, -- We don't need space before this
@@ -161,7 +161,7 @@ return {
             function()
                 local msg = 'No Active Lsp'
                 local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
-                local clients = vim.lsp.get_active_clients()
+                local clients = vim.lsp.get_clients()
                 if next(clients) == nil then
                     return msg
                 end
@@ -211,7 +211,7 @@ return {
 
         ins_right {
             function()
-                return '▊'
+                return '█'
             end,
             color = current_bar_color,
             padding = { left = 1 },

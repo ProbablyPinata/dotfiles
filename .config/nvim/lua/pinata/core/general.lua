@@ -2,6 +2,7 @@ local o = vim.opt
 local wo = vim.wo
 
 o.termguicolors = true
+o.winborder = 'solid'
 
 -- No timeout on leader keymaps
 o.timeout = false
@@ -20,7 +21,7 @@ wo.signcolumn = "yes"
 -- Indent Choice and Newlines
 o.tabstop     = 8 -- make tabs appear 8 characters wide
 o.softtabstop = 0 -- non-zero will mix spaces and tabs
-o.shiftwidth  = 4 -- use 4-space indents (size of an "indent")
+o.shiftwidth  = 2 -- use 4-space indents (size of an "indent")
 o.expandtab   = true -- tab in insert mode inserts spaces
 o.autoindent  = true
 o.shiftround  = true -- >>/<< indents to nearest multiple of shiftwidth
@@ -28,6 +29,7 @@ o.fileformat  = "unix"
 
 -- line wrap
 o.wrap = false
+o.textwidth = 80
 
 -- backup files & undo
 o.swapfile = false
@@ -63,6 +65,16 @@ o.lazyredraw = true
 -- unnamedplus to use Linux selection clipboard
 -- o.clipboard:append { 'unnamed', 'unnamedplus' }
 
--- hide links with vim conceal
-o.conceallevel = 2
-o.concealcursor = '' -- do not conceal cursorline
+o.conceallevel = 0
+-- o.concealcursor = '' -- do not conceal cursorline
+
+o.fillchars = {
+    vert = "█", -- alternatives │
+    -- fold = " ",
+    -- eob = " ", -- suppress ~ at EndOfBuffer
+    diff = "⣿", -- alternatives = ╱ ░ ─
+    msgsep = "‾",
+    -- foldopen = "▾",
+    -- foldsep = "│",
+    -- foldclose = "▸",
+}

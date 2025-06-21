@@ -3,15 +3,23 @@ return {
     dependencies = {
         "nvim-tree/nvim-web-devicons",
     },
-    event = "VimEnter",
     config = true,
     keys = {
-        { "<leader>e", "<cmd>Oil<cr>", mode = { "n", "v"} }
+        { "<leader><leader>e", "<cmd>Oil<cr>", mode = { "n", "v"} }
     },
     opts = {
         watch_for_changes = true,
         view_options = {
             show_hidden = true
-        }
+        },
+
+        -- Configuration for the floating action confirmation window
+        confirmation = {
+            padding = 10,
+            border = "solid",
+            win_options = {
+                winblend = 0,
+            },
+        },
     }
 }
