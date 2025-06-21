@@ -1,0 +1,29 @@
+# Config relating to the Lazygit UI
+gui:
+  theme:
+    # Border color of focused window
+    activeBorderColor:
+      - "#FC5507"
+      - bold
+
+    # Background color of selected line.
+    # See https://github.com/jesseduffield/lazygit/blob/master/docs/Config.md#highlighting-the-selected-line
+    selectedLineBgColor:
+      - "#802a02"
+
+  # Window border style.
+  # One of 'rounded' (default) | 'single' | 'double' | 'hidden'
+  border: 'single'
+
+  # Config relating to the spinner.
+  spinner:
+    # The frames of the spinner animation.
+    frames:
+      - '⣷'
+      - '⣯'
+      - '⣟'
+      - '⡿'
+      - '⢿'
+      - '⣻'
+      - '⣽'
+      - '⣾'
