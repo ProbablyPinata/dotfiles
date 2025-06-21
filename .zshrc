@@ -15,6 +15,7 @@ alias config='$(which git) --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 alias wacc-reference-compiler="java -jar /Users/stefan/comp50007/wacc-examples/wacc-reference-cli.jar"
 alias vm="ssh sv823@cloud-vm-45-94.doc.ic.ac.uk"
+alias n="nvim"
 
 # takes the filename of a pdf and outputs the optimized (compressed and stripped of metadata) filename.cleaned.pdf
 function clean_pdf() {
@@ -56,7 +57,7 @@ bindkey '^l' autosuggest-accept
 
 
 eval "$(fzf --zsh)"
-eval "$(zoxide init zsh --cmd cd --hook prompt)"
+eval "$(zoxide init zsh --hook prompt)"
 
 export DBUS_SESSION_BUS_ADDRESS="unix:path=$DBUS_LAUNCHD_SESSION_BUS_SOCKET"
 
@@ -65,8 +66,8 @@ eval "$(starship init zsh)"
 PATH=$PATH:/Users/stefan/comp50007/pintos_task0_sv823/src/utils
 PATH=$PATH:/Users/stefan/mac-i686-elf-gcc-binaries/bin
 
-
-fastfetch
+clear
+fastfetch --logo-type kitty --logo-width 30 --logo "/Users/stefan/Library/Mobile Documents/com~apple~CloudDocs/wallpapers/elephant_bw.jpeg"
 
 # LAST THING IN THE ZSHRC:
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
