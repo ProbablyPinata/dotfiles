@@ -140,7 +140,7 @@ run = 'layout floating'
 
 # [[on-window-detected]]
 # if.app-id = 'org.keepassxc.keepassxc'
-# run = 'layout floating'
+# run = 'layout floating
 
 # [key-mapping.key-notation-to-key-code]
 # q = 'q'
