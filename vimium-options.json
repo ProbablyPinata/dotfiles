@@ -1,0 +1,121 @@
+{
+  "keyMappings": "map J nextTab\nmap K previousTab",
+  "scrollStepSize": 200,
+  "searchEngines": "w: https://www.wikipedia.org/w/index.php?title=Special:Search&search=%s Wikipedia\n\n# More examples.\n#\n# (Vimium supports search completion Wikipedia, as\n# above, and for these.)\n#\n# g: https://www.google.com/search?q=%s Google\n# y: https://www.youtube.com/results?search_query=%s Youtube\n# gm: https://www.google.com/maps?q=%s Google maps\n# d: https://duckduckgo.com/?q=%s DuckDuckGo\n# az: https://www.amazon.com/s/?field-keywords=%s Amazon\n# qw: https://www.qwant.com/?q=%s Qwant",
+  "settingsVersion": "2.3",
+  "userDefinedLinkHintCss": "div > .vimiumHintMarker {\n  background: rgba(25, 25, 25, 1);\n\n  border-radius: 15px;\n  border: 1px solid rgba(255, 255, 255, 0.3); /* lighter border for dark bg */\n\n  padding: 4px 8px;\n}\n\n/* Text styling without shadow */\ndiv > .vimiumHintMarker span {\n  color: #FFFFFF;\n  font-weight: 600;\n  font-size: 13px;\n  font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif;\n  text-shadow: none;\n}\n\ndiv > .vimiumHintMarker > .matchingCharacter {\n  color: #FFFFFF; /* optional highlight color */\n  text-shadow: none;\n}",
+  "exclusionRules": [
+    {
+      "passKeys": "",
+      "pattern": "https?://mail.google.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://monkeytype.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "http://www.logictown.org/truth-table-generator"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://type.withmarko.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://tabletopia.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://colonist.io/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://vertix.io/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://zombsroyale.io/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://driverpracticaltest.dvsa.gov.uk/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://www.livethemes.co/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://vim-adventures.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://leetcode.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://www.syneticx.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://www.coolmathgames.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://www.overleaf.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://commitmono.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://www.typingclub.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://play.typeracer.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://www.nitrotype.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://zty.pe/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://imperial.cloud.panopto.eu/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://webassessment.una-arcticshores.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://cloud.doc.ic.ac.uk/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://drp04-backend-3fc9cd8957fb.herokuapp.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://192.168.1.47:8000/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://imperiallondon-my.sharepoint.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://www.hackerrank.com/*"
+    },
+    {
+      "passKeys": "",
+      "pattern": "https?://www.chess.com/*"
+    }
+  ]
+}
