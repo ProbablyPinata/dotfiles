@@ -33,7 +33,7 @@ format = "[ $path ]($style)"
 style = "fg:#dfdfe0 bg:#282828 bold"
 
 [git_branch]
-format = '[→ $branch(:$remote_branch )]($style)'
+format = '[→ $branch(:$remote_branch ) ]($style)'
 style = "fg:#08bdba bg:#282828"
 
 [git_commit]
@@ -47,7 +47,7 @@ conflicted = "conflicted"
 ahead = "[, ahead by ${count} ](fg:#08bdba bg:#282828)"
 behind = "[, behind by ${count} ](fg:#08bdba bg:#282828)"
 diverged = "[${ahead_count} ahead, ${behind_count} behind ]"
-up_to_date = "[ ](bg:#282828)"
+up_to_date = "[](bg:#282828)"
 untracked = "?${count} "
 stashed = "stashed ${count} "
 modified = "!${count} "
@@ -68,12 +68,12 @@ disabled = false
 time_format = "%I:%M:%S %p" # Hour:Minute Format
 format = '[ $time ](fg:#dfdfe0 bg:#282828)'
 
+
 [cmd_duration]
 disabled = false
 min_time = 0
 show_milliseconds = true
-format = '[ $duration |](fg:#dfdfe0 bg:#282828)'
-
+format = '[ $duration ](fg:#282828 bg:#b6b8bb)'
 
 [python]
 format = '[(\($virtualenv\))](bg:#282828 fg:#dfdfe0 italic)'
