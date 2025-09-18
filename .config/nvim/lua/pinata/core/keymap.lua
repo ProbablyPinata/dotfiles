@@ -22,10 +22,9 @@ km.set("n", "<C-k>", "<cmd>cprev<cr>")
 -- km.set("v", "<C-J>", ":move '>+1<CR>gv=gv")
 -- km.set("v", "<C-K>", ":move '<-2<CR>gv=gv")
 
--- centre when scrolling
+-- centre cursor when scrolling
 km.set("n", "<C-d>", "<C-d>zz")
 km.set("n", "<C-u>", "<C-u>zz")
-
 
 -- change text without putting it in the vim register
 km.set("n", "c", '"_c')

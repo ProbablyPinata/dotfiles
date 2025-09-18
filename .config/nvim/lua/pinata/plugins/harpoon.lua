@@ -29,7 +29,7 @@ return {
                 mode = "n",
             },
             {
-                "<C-1>",
+                "<C-,>",
                 function()
                     require("harpoon"):list():select(1)
                 end,
@@ -37,7 +37,7 @@ return {
                 mode = { "n", "i", "v"},
             },
             {
-                "<C-2>",
+                "<C-.>",
                 function()
                     require("harpoon"):list():select(2)
                 end,
@@ -45,7 +45,7 @@ return {
                 mode = { "n", "i", "v"},
             },
             {
-                "<C-3>",
+                "<C-/>",
                 function()
                     require("harpoon"):list():select(3)
                 end,
@@ -53,7 +53,7 @@ return {
                 mode = { "n", "i", "v"},
             },
             {
-                "<C-4>",
+                "<C-;>",
                 function()
                     require("harpoon"):list():select(4)
                 end,

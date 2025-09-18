@@ -5,8 +5,9 @@ return {
 
     init = function()
         vim.g.vimtex_view_method = "sioyek"
+        vim.g.vimtex_view_sioyek_exe = "/Applications/sioyek.app/Contents/MacOS/sioyek"
         vim.g.vimtex_compiler_latexmk = {
-            aux_dir = '',
+            aux_dir = 'aux',
             out_dir = '',
             callback = 1,
             continuous = 1,
