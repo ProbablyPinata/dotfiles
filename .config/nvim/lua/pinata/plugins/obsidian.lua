@@ -14,6 +14,9 @@ return {
         "nvim-treesitter"
     },
     opts = {
+        completion = {
+          nvim_cmp = false,
+        },
         workspaces = {
             {
                 name = "personal",

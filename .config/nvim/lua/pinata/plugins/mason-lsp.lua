@@ -9,7 +9,7 @@ return {
         require("mason").setup()
 
         require("mason-lspconfig").setup({
-            ensure_installed = { "lua_ls", "hls", "bashls", "clangd", "texlab", "ts_ls"},
+            ensure_installed = { "lua_ls", "hls", "bashls", "clangd", "texlab", "ts_ls", "marksman"},
             automatic_enable = false,
         })
 
@@ -21,6 +21,7 @@ return {
         lspconfig.bashls.setup({ capabilities = capabilities })
         lspconfig.clangd.setup({ capabilities = capabilities })
         lspconfig.ts_ls.setup({ capabilities = capabilities })
+        lspconfig.marksman.setup({ capabilities = capabilities })
         lspconfig.texlab.setup({
             capabilities = capabilities,
             filetypes = { "tex", "plaintex", "bib", "ltx" },

@@ -6,7 +6,7 @@ return {
     config = function()
         local palettes = {
             carbonfox = {
-                bg1 = "#000000", -- Black background
+                bg1 = "#000000", -- Pure background
             }
         }
         require('nightfox').setup({
@@ -28,11 +28,11 @@ return {
             palettes = palettes,
             groups = {
                 carbonfox = {
-                    Pmenu = { bg = "#282828", fg = "#f2f4f8" },
+                    Pmenu = { bg = "#000000", fg = "#fc5507" }, -- match background
                     PmenuSel = { bg = "#fc5507", fg = "#f2f4f8" },
+                    PmenuThumb = { bg = "#f2f4f8", fg = "#f2f4f8" },
                     CursorLineNr = { fg = "#fc5507" },
                     WinSeparator = { fg = "#282828" },
-                    -- Conceal = { fg = "#78a9ff" } -- figure out how to link this to blue
                 },
             }
         })
