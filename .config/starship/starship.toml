@@ -3,10 +3,6 @@ $username\
 $hostname\
 $python\
 $directory\
-$git_branch\
-$git_commit\
-$git_status\
-$git_metrics\
 $sudo\
 $character
 """
@@ -33,15 +29,18 @@ format = "[ $path ]($style)"
 style = "fg:#dfdfe0 bg:#282828 bold"
 
 [git_branch]
+enabled = false
 format = '[→ $branch(:$remote_branch ) ]($style)'
 style = "fg:#08bdba bg:#282828"
 
 [git_commit]
+enabled = false
 commit_hash_length = 7
 format = '[\($hash$tag\) ]($style)'
 style = "fg:#08bdba bg:#282828"
 
 [git_status]
+enabled = false
 format = "$ahead_behind[$stashed](fg:#dfdfe0 bg:#282828)[$deleted](fg:#ee5396 bg:#282828)[$renamed](fg:#be95ff bg:#282828)[$modified](fg:#FFF050 bg:#282828)[$typechanged](fg:#be95ff bg:#282828)[$staged](fg:#25be6a bg:#282828)[$untracked](fg:#b6b8bb bg:#282828)"
 conflicted = "conflicted" 
 ahead = "[, ahead by ${count} ](fg:#08bdba bg:#282828)"
@@ -58,6 +57,7 @@ typechanged = ".${count}"
 ignore_submodules = true
 
 [git_metrics]
+enabled = false
 format = '([+$added ]($added_style))([-$deleted ]($deleted_style))'
 added_style = "fg:#25be6a bg:#282828"
 deleted_style = "fg:#ee5396 bg:#282828"
