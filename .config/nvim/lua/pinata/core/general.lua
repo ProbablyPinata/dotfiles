@@ -29,7 +29,7 @@ o.fileformat  = "unix"
 
 -- line wrap
 o.wrap = false
-o.textwidth = 80
+o.textwidth = 0
 
 -- backup files & undo
 o.swapfile = false

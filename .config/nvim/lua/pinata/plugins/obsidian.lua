@@ -27,7 +27,14 @@ return {
                 path = "~/vaults/imperial",
             },
         },
-        ui = { enable = false }, -- using render-markdown.nvim
+        ui = { 
+            enable = false, 
+            checkboxes = {
+                -- NOTE: the 'char' value has to be a single character, and the highlight groups are defined.
+                [" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
+                ["x"] = { char = "", hl_group = "ObsidianDone" },
+            },
+        },
     },
 
 }
