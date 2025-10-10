@@ -12,7 +12,9 @@ return {
         wiki = {
             icon = '󰌷 ',
         },
+      },
+      bullet = {
+        enabled = false
       }
-
     },
 }
