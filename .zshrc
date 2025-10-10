@@ -60,8 +60,6 @@ PATH=$PATH:/Users/stefan/mac-i686-elf-gcc-binaries/bin
 PATH=$PATH:/Applications/sioyek.app/Contents/MacOS
 
 clear
-fastfetch --logo-type kitty --logo-width 30 --logo "/Users/stefan/Library/Mobile Documents/com~apple~CloudDocs/wallpapers/elephant_bw.jpeg"
-
 
 # LAST THING IN THE ZSHRC:
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
