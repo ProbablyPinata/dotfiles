@@ -1,3 +1,6 @@
+export HISTSIZE=10000
+export HISTFILESIZE=10000
+
 export EDITOR=nvim 
 export VISUAL="$EDITOR"
 export HOMEBREW_NO_EMOJI=1
@@ -23,6 +26,11 @@ function yaz() {
   [ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
   rm -f -- "$tmp"
 }
+
+function pdf() {
+  zathura "$1" & disown
+}
+
 
 autoload -Uz vcs_info # enable version control info, in variable vcs_info_msg_0 to be used in prompt
 
@@ -58,6 +66,13 @@ eval "$(starship init zsh)"
 PATH=$PATH:/Users/stefan/comp50007/pintos_task0_sv823/src/utils
 PATH=$PATH:/Users/stefan/mac-i686-elf-gcc-binaries/bin
 PATH=$PATH:/Applications/sioyek.app/Contents/MacOS
+
+export PATH="/opt/homebrew/opt/llvm@18/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/llvm@18/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/llvm@18/include"
+export CMAKE_PREFIX_PATH="/opt/homebrew/opt/llvm@18"
+export CXX="/opt/homebrew/opt/llvm@18/bin"
+
 
 clear
 
