@@ -88,7 +88,7 @@ return {
       ins_left {
         'filename',
         cond = conditions.buffer_not_empty,
-        color = { fg = colors.bg, bg = colors.grey, gui = 'bold' },
+        color = { fg = colors.bg, bg = colors.fg, gui = 'bold' },
       }
 
       ins_left {

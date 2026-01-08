@@ -9,48 +9,48 @@ return {
         require("mason").setup()
 
         require("mason-lspconfig").setup({
-            ensure_installed = { "lua_ls", "hls", "bashls", "clangd", "texlab", "ts_ls", "marksman"},
+            ensure_installed = { "lua_ls", "bashls", "clangd", "texlab", "ts_ls", "marksman"},
             automatic_enable = false,
         })
 
         local capabilities = require('blink.cmp').get_lsp_capabilities()
-        local lspconfig = require("lspconfig")
-
-        lspconfig.lua_ls.setup({ capabilities = capabilities, })
-        lspconfig.hls.setup({ capabilities = capabilities })
-        lspconfig.bashls.setup({ capabilities = capabilities })
-        lspconfig.clangd.setup({ capabilities = capabilities })
-        lspconfig.ts_ls.setup({ capabilities = capabilities })
-        lspconfig.marksman.setup({ capabilities = capabilities })
-        lspconfig.texlab.setup({
-            capabilities = capabilities,
-            filetypes = { "tex", "plaintex", "bib", "ltx" },
-            settings = {
-                texlab = {
-                    auxDirectory = ".",
-                    bibtexFormatter = "texlab",
-                    build = {
-                        args = { "-pdf", "-interaction=nonstopmode", "-synctex=1", "%f" },
-                        executable = "latexmk",
-                        forwardSearchAfter = false,
-                        onSave = false
-                    },
-                    chktex = {
-                        onEdit = false,
-                        onOpenAndSave = false
-                    },
-                    diagnosticsDelay = 300,
-                    formatterLineLength = 80,
-                    forwardSearch = {
-                        args = {}
-                    },
-                    latexFormatter = "latexindent",
-                    latexindent = {
-                        modifyLineBreaks = false
-                    }
-                }
-            }
+        vim.lsp.enable({
+            'clangd',
+            'lua_ls',
+            'bashls',
+            'ts_ls',
+            'marksman'
         })
+
+        -- lspconfig.texlab.setup({
+        --     capabilities = capabilities,
+        --     filetypes = { "tex", "plaintex", "bib", "ltx" },
+        --     settings = {
+        --         texlab = {
+        --             auxDirectory = ".",
+        --             bibtexFormatter = "texlab",
+        --             build = {
+        --                 args = { "-pdf", "-interaction=nonstopmode", "-synctex=1", "%f" },
+        --                 executable = "latexmk",
+        --                 forwardSearchAfter = false,
+        --                 onSave = false
+        --             },
+        --             chktex = {
+        --                 onEdit = false,
+        --                 onOpenAndSave = false
+        --             },
+        --             diagnosticsDelay = 300,
+        --             formatterLineLength = 80,
+        --             forwardSearch = {
+        --                 args = {}
+        --             },
+        --             latexFormatter = "latexindent",
+        --             latexindent = {
+        --                 modifyLineBreaks = false
+        --             }
+        --         }
+        --     }
+        -- })
 
         vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
         vim.keymap.set({ 'n' }, '<leader>ca', vim.lsp.buf.code_action, {})

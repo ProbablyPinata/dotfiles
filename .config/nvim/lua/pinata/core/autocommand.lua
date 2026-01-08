@@ -25,3 +25,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
         -- whatever other lsp config you want
     end
 })
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = { "*.p4", "*.P4" },
+  callback = function()
+    vim.bo.filetype = "p4"
+  end,
+})

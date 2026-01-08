@@ -55,7 +55,7 @@ o.termguicolors = true
 --o.background = "dark"
 
 -- keep space below/above cursor
-o.scrolloff = 10
+o.scrolloff = 0 -- disable
 o.sidescrolloff = 10
 
 -- speed up macros and regexes

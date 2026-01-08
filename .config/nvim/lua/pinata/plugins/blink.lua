@@ -69,12 +69,12 @@ return {
 
         -- (Default) Only show the documentation popup when manually triggered
         completion = {
-            menu = { border = 'single' },
+            menu = { border = 'solid' },
             documentation = {
                 auto_show = true,
-                window = { border = 'single' } },
+                window = { border = 'solid' } },
             },
-            signature = { window = { border = 'single' } },
+            signature = { window = { border = 'solid' } },
 
             -- Default list of enabled providers defined so that you can extend it
             -- elsewhere in your config, without redefining it, due to `opts_extend`
