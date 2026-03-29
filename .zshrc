@@ -16,6 +16,56 @@ alias icloud="cd '/Users/stefan/Library/Mobile Documents/com~apple~CloudDocs'"
 alias ls="eza"
 alias config='$(which git) --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias n="nvim"
+alias t="zmx"
+
+function ts() {
+  output=$(t | awk '{for(i=1;i<=NF;i++) if($i ~ /^name=/) {split($i,a,"="); print a[2]}}' | fzf \
+    --print-query \
+    --expect=ctrl-n \
+    --height=80% \
+    --reverse \
+    --prompt="zmx> " \
+    --header="Enter: select | Ctrl-N: create new" \
+    --preview='zmx history {1}' \
+    --preview-window=right:60%:follow \
+  )
+
+  query=$(echo "$output" | sed -n '1p')
+  key=$(echo "$output" | sed -n '2p')
+  selected=$(echo "$output" | sed -n '3p')
+
+  if [[ "$key" == "ctrl-n" && -n "$query" ]]; then # indicated new session with ctrl-n
+    session_name="$query"
+  elif [[ $rc -eq 0 && -n "$selected" ]]; then # selected exicting session
+    session_name=$selected
+  elif [[ -n "$query" ]]; then # unrecognised query
+    session_name="$query"
+  else
+    return 130
+  fi
+
+  zmx attach "$session_name"
+}
+
+
+
+function p() {
+  if [[ -z "$1" ]]; then
+    echo "Usage: p <search-term>"
+    return 1
+  fi
+
+  keepassxc-cli clip ~/secrets/main.kdbx "$*"
+}
+
+function e() {
+  if [[ -z "$1" ]]; then
+    echo "Usage: p <search-term>"
+    return 1
+  fi
+
+  keepassxc-cli search ~/secrets/main.kdbx "$*"
+}
 
 # Shell wrapper to open and navigate using yazi.
 # https://yazi-rs.github.io/docs/quick-start/#shell-wrapper
@@ -39,6 +89,10 @@ autoload -Uz +X compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' menu select
 
+if command -v zmx &> /dev/null; then
+  eval "$(zmx completions zsh)"
+fi
+
 # complete dotfiles
 _comp_options+=(globdots) # With hidden files
 
@@ -56,7 +110,6 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '^ ' autosuggest-accept
 
 
-eval "$(fzf --zsh)"
 eval "$(zoxide init zsh --hook prompt)"
 
 export DBUS_SESSION_BUS_ADDRESS="unix:path=$DBUS_LAUNCHD_SESSION_BUS_SOCKET"
@@ -74,10 +127,15 @@ export CMAKE_PREFIX_PATH="/opt/homebrew/opt/llvm@18"
 export CXX="/opt/homebrew/opt/llvm@18/bin"
 
 
+
 clear
 
 # LAST THING IN THE ZSHRC:
+#
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# Placed here to allow **
+eval "$(fzf --zsh)"
 
 [ -f "/Users/stefan/.ghcup/env" ] && . "/Users/stefan/.ghcup/env" # ghcup-env
+export PATH="$HOME/.local/bin:$PATH"
