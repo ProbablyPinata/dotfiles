@@ -1,4 +1,5 @@
 format = """\
+$custom\
 $username\
 $hostname\
 $python\
@@ -77,3 +78,9 @@ format = '[ $duration ](fg:#282828 bg:#b6b8bb)'
 
 [python]
 format = '[(\($virtualenv\))](bg:#282828 fg:#dfdfe0 italic)'
+
+
+[custom.zmx]
+command = 'echo $ZMX_SESSION' # shows output of command
+when = '[ -n "$ZMX_SESSION" ]' 
+format = '[ $output ](bg:#dfdfe0 fg:#282828 bold)'
