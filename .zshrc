@@ -1,6 +1,3 @@
-export HISTSIZE=10000
-export HISTFILESIZE=10000
-
 export EDITOR=nvim 
 export VISUAL="$EDITOR"
 export HOMEBREW_NO_EMOJI=1
@@ -83,8 +80,8 @@ function pdf() {
 
 
 autoload -Uz vcs_info # enable version control info, in variable vcs_info_msg_0 to be used in prompt
-
-autoload -Uz +X compinit && compinit
+autoload -Uz compinit
+compinit -C
 ## case insensitive path-completion
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' menu select
@@ -96,6 +93,7 @@ fi
 # complete dotfiles
 _comp_options+=(globdots) # With hidden files
 
+
 # enable vi mode
 # bindkey -v
 # exit insert mode with jk/kj 
@@ -103,10 +101,13 @@ _comp_options+=(globdots) # With hidden files
 # bindkey kj vi-cmd-mode
 # export KEYTIMEOUT=1
 # Improved vi mode with zsh-vi-mode
-source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+BREW_PREFIX="$(brew --prefix)"
+source $BREW_PREFIX/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
+# after compinit, but before zsh-autosuggestions
+source ~/fzf-tab/fzf-tab/fzf-tab.plugin.zsh
 
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $BREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 bindkey '^ ' autosuggest-accept
 
 
@@ -116,8 +117,6 @@ export DBUS_SESSION_BUS_ADDRESS="unix:path=$DBUS_LAUNCHD_SESSION_BUS_SOCKET"
 
 eval "$(starship init zsh)"
 
-PATH=$PATH:/Users/stefan/comp50007/pintos_task0_sv823/src/utils
-PATH=$PATH:/Users/stefan/mac-i686-elf-gcc-binaries/bin
 PATH=$PATH:/Applications/sioyek.app/Contents/MacOS
 
 export PATH="/opt/homebrew/opt/llvm@18/bin:$PATH"
@@ -126,16 +125,24 @@ export CPPFLAGS="-I/opt/homebrew/opt/llvm@18/include"
 export CMAKE_PREFIX_PATH="/opt/homebrew/opt/llvm@18"
 export CXX="/opt/homebrew/opt/llvm@18/bin"
 
-
+unset HISTFILE
 
 clear
-
-# LAST THING IN THE ZSHRC:
-#
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Placed here to allow **
 eval "$(fzf --zsh)"
 
 [ -f "/Users/stefan/.ghcup/env" ] && . "/Users/stefan/.ghcup/env" # ghcup-env
 export PATH="$HOME/.local/bin:$PATH"
+
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh)"
+bindkey '^R' ''
+bindkey -M viins '^R' ''
+bindkey -M vicmd '^R' ''
+bindkey -M viins '^R' atuin-search
+bindkey -M vicmd '^R' atuin-search
+
+# LAST THING IN THE ZSHRC:
+source $BREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
